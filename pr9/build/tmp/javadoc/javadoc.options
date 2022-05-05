@@ -1,0 +1,7 @@
+-classpath 'D:\\2k2sem\\Java\\pr9\\build\\classes\\java\\main;D:\\2k2sem\\Java\\pr9\\build\\resources\\main'
+-d 'D:\\2k2sem\\Java\\pr9\\build\\docs\\javadoc'
+-doctitle 'pr9 1.0-SNAPSHOT API'
+-notimestamp 
+-quiet 
+-windowtitle 'pr9 1.0-SNAPSHOT API'
+'D:\\2k2sem\\Java\\pr9\\src\\main\\java\\Main.java'

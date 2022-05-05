@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar(){
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
+
+task copyJar(type: Copy){
+    dependsOn << jar
+    from "$rootDir/build/libs/pr9-1.0-SNAPSHOT.jar"
+    into "$rootDir/src/main/resources/"
+}
+
+task deleteJar(type: Delete){
+    dependsOn << copyJar
+    delete file("$buildDir/libs/pr9-1.0-SNAPSHOT.jar")
+}
+
+task createDockerImage(type: Exec){
+    dependsOn << deleteJar
+    commandLine 'docker', 'build', '-t', 'javap', './src/main/resources/'
+}
+
+task runDockerImage(type: Exec){
+    dependsOn << createDockerImage
+    commandLine 'docker', 'run', 'javap'
+}
