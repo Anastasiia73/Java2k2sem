@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.pr14.PatientTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-26T19:18:45" hostname="DESKTOP-MCM9J45" time="0.964">
+  <properties/>
+  <testcase name="getPatients()" classname="com.example.pr14.PatientTest" time="0.964"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
